@@ -1,0 +1,69 @@
+"vundle {{{1
+
+" needed to run vundle 
+set nocompatible
+set shell=bash
+set number
+" vundle needs filtype plugins off
+
+filetype plugin indent off
+syntax off
+
+" set the runtime path for vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" start vundle environment
+call vundle#begin()
+
+" list of plugins {{{2
+" let Vundle manage Vundle #required
+Plugin 'VundleVim/Vundle.vim'
+
+" to install a plugin add it here and run :PluginInstall.
+" to update the plugins run :PluginInstall! or :PluginUpdate
+" to delete a plugin remove it here and run :PluginClean
+"
+
+" Plugin list below
+Plugin 'bling/vim-airline'
+Plugin 'Valloric/YouCompleteMe'
+
+" Plugins before this line
+call vundle#end()
+
+" turn filetype plugins on
+filetype plugin indent on
+
+" Handy vim options
+
+" syntax highlighting on
+syntax on
+
+" Highlight current line
+set cursorline
+
+" Show the cursor position
+set ruler
+
+" Show "invisible" characters
+set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set list
+
+" Highlight searches
+set hlsearch
+" to disable after a search :noh
+
+" Don’t reset cursor to start of line when moving around.
+set nostartofline
+
+" Use relative line numbers
+if exists("&relativenumber")
+        set relativenumber
+                au BufReadPost * set relativenumber
+endif
+
+" Show the filename in the window titlebar
+set title
+
+" Quicker way of exiting insert mode
+inoremap jk <ESC>
